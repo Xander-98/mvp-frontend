@@ -1,0 +1,28 @@
+#root {
+  background-image: url("https://wallpapercave.com/dwp2x/wp9498821.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.container {
+  width: 300px;
+  background: rgb(0, 0, 0);
+  padding: 50px;
+  margin: 20px;
+  opacity: .8;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+h1 {
+  color:darkorange
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
