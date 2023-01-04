@@ -1,14 +1,21 @@
+import { useState, useEffect } from "react";
 import { Header } from "./Header";
-import { Home } from "./Home";
 import { Footer } from "./Footer";
-import { AnimeFetch } from "./AnimeFetch";
+import { Sidebar } from "./Sidebar";
+import { MainAnime } from "./MainAnime";
 
 function App() {
+  const [animeList, SetAnimeList] = useState([]);
+  const [topAnime, SetTopAnime] = useState([]);
+  const [search, SetSearch] = useState([]);
+
   return (
-    <div>
+    <div className="App">
       <Header />
-      <Home />
-      <AnimeFetch />
+      <div className="content-wrap">
+        <Sidebar topAnime={topAnime} />
+        <MainAnime />
+      </div>
       <Footer />
     </div>
   );
