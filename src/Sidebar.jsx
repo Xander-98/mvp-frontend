@@ -15,3 +15,4 @@ export function Sidebar(props) {
     </aside>
   );
 }
+export default Sidebar;

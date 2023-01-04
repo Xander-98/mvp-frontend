@@ -1,7 +1,8 @@
 import React from "react";
-// import AnimeCard from "./AnimeCard";
+import AnimeCard from "./AnimeCards";
 
 export function MainAnime(props) {
+  console.log(props, "from main");
   return (
     <main>
       <div className="main-head">
@@ -15,11 +16,13 @@ export function MainAnime(props) {
           />
         </form>
       </div>
-      {/* <div className="anime-list">
+      <div className="anime-list">
         {props.animeList.map((anime) => (
           <AnimeCard anime={anime} key={anime.mal_id} />
         ))}
-      </div> */}
+      </div>
     </main>
   );
 }
+
+export default MainAnime;
