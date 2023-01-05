@@ -13,6 +13,9 @@ export function AnimeCard({ anime }) {
           <h3>{anime.title}</h3>
         </div>
       </a>
+      <button className="favorite" type="button" onClick={handlePostFavorite}>
+        Text here
+      </button>
     </article>
   );
 }
