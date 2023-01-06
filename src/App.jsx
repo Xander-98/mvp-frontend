@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Login } from "./Login";
 import { Footer } from "./Footer";
 import { Sidebar } from "./Sidebar";
 import { MainAnime } from "./MainAnime";
@@ -11,12 +12,12 @@ function App() {
   const [favorite, setFavorite] = useState("");
 
   const getTopAnime = () => {
-    axios.get("https://api.jikan.moe/v4/top/anime?filter=%22bypopularity%22&limit=20").then((res) => {
+    axios.get("http://localhost:3000/animes").then((res) => {
       setTopAnime(res.data.data);
     });
   };
 
-  const handlePostFavorite = () => {};
+  // const handlePostFavorite = () => {};
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -40,8 +41,8 @@ function App() {
       <div className="content-wrap">
         <Sidebar topAnime={topAnime} />
         <MainAnime handleSearch={handleSearch} search={search} setSearch={setSearch} animeList={animeList} />
+        <Login />
       </div>
-      <Footer />
     </div>
   );
 }

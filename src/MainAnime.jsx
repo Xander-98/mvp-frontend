@@ -2,7 +2,6 @@ import React from "react";
 import AnimeCard from "./AnimeCards";
 
 export function MainAnime(props) {
-  console.log(props, "from main");
   return (
     <main>
       <div className="main-head">
