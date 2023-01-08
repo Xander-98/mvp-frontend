@@ -1,8 +1,13 @@
 import React from "react";
+import axios from "axios";
 import { ReactDOM } from "react";
 
 export function AnimeCard({ anime }) {
   console.log(anime.images.jpg.image_url, "from card");
+  const handleOtaku = () => {
+    axios.post("http://localhost:3000/otaku", { anime_id: anime.mal_id });
+    console.log("Favorited");
+  };
 
   return (
     <article className="anime-card">
@@ -17,6 +22,7 @@ export function AnimeCard({ anime }) {
       <button
         className="btn-size"
         type="button"
+        onClick={handleOtaku}
         style={{ width: "75px", margin: "2px", backgroundColor: "transparent", textAlign: "center" }}
       >
         <img

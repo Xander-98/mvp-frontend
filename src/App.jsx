@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Signup } from "./Signup";
+
 import { Login } from "./Login";
 import { Sidebar } from "./Sidebar";
 import { MainAnime } from "./MainAnime";
@@ -8,15 +10,13 @@ function App() {
   const [animeList, setAnimeList] = useState([]);
   const [topAnime, setTopAnime] = useState([]);
   const [search, setSearch] = useState("");
-  const [favorite, setFavorite] = useState("");
+  const [otaku, setOtaku] = useState("");
 
   const getTopAnime = () => {
     axios.get("http://localhost:3000/animes").then((res) => {
       setTopAnime(res.data.data);
     });
   };
-
-  // const handlePostFavorite = () => {};
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -39,7 +39,14 @@ function App() {
     <div className="App">
       <div className="content-wrap">
         <Sidebar topAnime={topAnime} />
-        <MainAnime handleSearch={handleSearch} search={search} setSearch={setSearch} animeList={animeList} />
+        <MainAnime
+          handleSearch={handleSearch}
+          search={search}
+          setSearch={setSearch}
+          animeList={animeList}
+          otaku={otaku}
+        />
+        <Signup />
         <Login />
       </div>
     </div>
