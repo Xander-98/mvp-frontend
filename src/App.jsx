@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Login } from "./Login";
-import { Footer } from "./Footer";
 import { Sidebar } from "./Sidebar";
 import { MainAnime } from "./MainAnime";
 
@@ -26,8 +25,8 @@ function App() {
     getAnime(search);
   };
 
-  const getAnime = (query) => {
-    axios.get(`https://api.jikan.moe/v4/anime?q=${query}&order_by=title&sort=asc`).then((res) => {
+  const getAnime = (search) => {
+    axios.get(`http://localhost:3000/search/${search}`).then((res) => {
       console.log(res.data.data, "searched");
       setAnimeList(res.data.data);
     });

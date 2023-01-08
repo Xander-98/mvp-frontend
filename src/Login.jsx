@@ -14,7 +14,7 @@ export function Login() {
     setErrors([]);
     const params = new FormData(e.target);
     axios
-      .post("http://localhost:3000/sessions", params)
+      .get("http://localhost:3000/login", params)
       .then((res) => {
         console.log(res.data);
         axios.defaults.headers.common["Authorization"] = "Bearer" + res.data.jwt;
