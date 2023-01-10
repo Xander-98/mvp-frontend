@@ -30,7 +30,7 @@ export function Login() {
 
   return (
     <footer>
-      <div id="login" style={{ position: "" }}>
+      <div id="login" style={{ margin: "auto" }}>
         <h1>Login</h1>
         <ul>
           {errors.map((error) => (

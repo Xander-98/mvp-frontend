@@ -3,7 +3,6 @@ import axios from "axios";
 import { ReactDOM } from "react";
 
 export function AnimeCard({ anime }) {
-  console.log(anime.images.jpg.image_url, "from card");
   const handleOtaku = () => {
     axios.post("http://localhost:3000/otaku", { anime_id: anime.mal_id });
     console.log("Favorited");

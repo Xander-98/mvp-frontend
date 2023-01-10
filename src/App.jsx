@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Signup } from "./Signup";
-
 import { Login } from "./Login";
 import { Sidebar } from "./Sidebar";
 import { MainAnime } from "./MainAnime";
@@ -20,14 +19,18 @@ function App() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("searched");
 
     getAnime(search);
   };
 
+  const getAllOtaku = (user_id) => {
+    return axios.get(`http://localhost:3000/favorites/${user_id}`).then((res) => {
+      setOtaku(res.data.data);
+    });
+  };
+
   const getAnime = (search) => {
     axios.get(`http://localhost:3000/search/${search}`).then((res) => {
-      console.log(res.data.data, "searched");
       setAnimeList(res.data.data);
     });
   };
