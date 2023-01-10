@@ -8,6 +8,7 @@ if (jwt) {
 
 export function Login() {
   const [errors, setErrors] = useState([]);
+  const [loggedin, setLoggedIn] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -30,8 +31,8 @@ export function Login() {
 
   return (
     <footer>
-      <div id="login" style={{ margin: "auto" }}>
-        <h1>Login</h1>
+      <div id="login" style={{ margin: "auto", backgroundColor: "#313131" }}>
+        <h1 style={{ color: "white" }}>Login</h1>
         <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
