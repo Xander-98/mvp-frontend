@@ -5,7 +5,7 @@ export function MainAnime(props) {
   return (
     <main>
       <div className="main-head">
-        <form className="search-box" onSubmit={props.handleSearch}>
+        <form style={{}} className="search-box" onSubmit={props.handleSearch}>
           <input
             type="search"
             placeholder="Search for an anime..."

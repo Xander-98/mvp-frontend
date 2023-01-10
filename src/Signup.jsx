@@ -29,9 +29,9 @@ export function Signup() {
         width: "150px",
         height: "150px",
         padding: "5px",
-        position: "absolute",
-        right: "20px",
-        top: "200px",
+        position: "fixed",
+        left: "0px",
+        top: "0px",
         backgroundColor: "#313131",
       }}
     >
@@ -47,7 +47,7 @@ export function Signup() {
           Password: <input className="form-control" name="password" type="text" />
         </div>
         <div>
-          Password_confirmation: <input className="form-control" name="password_confirmation" type="text" />
+          Password: <input className="form-control" name="password_confirmation" type="text" />
         </div>
         <button className="mt-3 btn btn-primary" type="submit">
           Signup
